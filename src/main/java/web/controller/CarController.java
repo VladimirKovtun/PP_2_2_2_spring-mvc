@@ -21,7 +21,7 @@ public class CarController {
     }
 
     @GetMapping("/")
-    public String getIndexCars(@RequestParam int count, ModelMap model) {
+    public String getIndexCars(@RequestParam(defaultValue = "0") int count, ModelMap model) {
         model.addAttribute("listCars", carService.getCountedCars(count));
         return "cars";
     }
